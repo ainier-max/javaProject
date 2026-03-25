@@ -54,7 +54,7 @@ public class MainClass {
 //            String strFile = "E:\\3.示例工程\\等值面\\isopleth\\结果\\result"+randomNumber+".json";
 //            writeStringToFile(strJson,strFile);
 
-            System.out.println(strFile + "差值成功, 共耗时" + (System.currentTimeMillis() - start) + "ms");
+            //System.out.println(strFile + "差值成功, 共耗时" + (System.currentTimeMillis() - start) + "ms");
         } catch (Exception e) {
             e.printStackTrace();
         }
