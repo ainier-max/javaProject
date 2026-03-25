@@ -1,4 +1,4 @@
-package org.water.common;
+package cbc.wcount.util;
 
 import org.geotools.data.DataUtilities;
 import org.geotools.data.collection.ListFeatureCollection;
