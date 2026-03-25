@@ -289,7 +289,15 @@ public class EquiSurface {
      * 写入内容到文件
      */
     public static void writeStringToFile(String content, String filePath) throws IOException {
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
+        File targetFile = new File(filePath);
+        File parentDir = targetFile.getParentFile();
+        if (parentDir != null && !parentDir.exists() && !parentDir.mkdirs()) {
+            throw new IOException("Failed to create directory: " + parentDir.getAbsolutePath());
+        }
+        if (!targetFile.exists() && !targetFile.createNewFile()) {
+            throw new IOException("Failed to create file: " + targetFile.getAbsolutePath());
+        }
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(targetFile))) {
             writer.write(content);
         }
     }
